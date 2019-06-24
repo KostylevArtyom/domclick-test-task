@@ -11,12 +11,4 @@ public interface AccountRepository extends CrudRepository<Account, Long> {
     @Override
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     Optional<Account> findById(Long id);
-
-    @Override
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    Iterable<Account> findAll();
-
-    @Override
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    Iterable<Account> findAllById(Iterable<Long> ids);
 }
